@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+.Header {
+  display: flex;
+  width: 100%;
+  padding: 2em 2.5em;
+  background-color: #a9d3e9;
+  justify-content: space-between;
+  align-items: center;
+}
+input {
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+.card-container {
+  padding: 1em;
+  margin-top: 3em;
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  margin-inline: auto;
+}
+.card {
+  display: flex;
+  flex-direction: row;
+}
+.card-front {
+  /* grid-area: 1 / 1 / 6 / 4; */
+}
+.card-front img {
+  border-radius: 14px;
+}
+.card-back {
+  display: none;
+}

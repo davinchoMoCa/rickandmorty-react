@@ -6,37 +6,37 @@ import rick from "./images/rick.png"
 import morty from "./images/morty.png"
 
 const Home = () => {
-    return(
+    return (
         <div className="Home">
 
-            <Header style={{display:"none"}}/>
+            <Header style={{ display: "none" }} />
             <section className="login">
-           
+
                 <div className="background-image">
-                    <img src={rick} alt="" />
-                    <img src={morty} alt="" />
+                    <img src={rick} alt="Rick from Rick and Morty" />
+                    <img src={morty} alt="Morty from Rick and Morty" />
                 </div>
                 <div className="form-container">
                     <form action="">
-                    <h1 style={{marginBottom:20}}>Welcome</h1>
-                        <input 
-                        type="text" 
-                        name="" 
-                        id="" 
-                        
-                        placeholder="Username"
-/>
-                        <input 
-                        type="text" 
-                        name="" 
-                        id="" 
-                        
-                        placeholder="Age"
+                        <h1 style={{ marginBottom: 20 }}>Welcome</h1>
+                        <input
+                            type="text"
+                            name=""
+                            id=""
+
+                            placeholder="Username"
                         />
-                    <Link to="/cards"><button 
-                        className="form--submit">
-                        View Cards
-                    </button></Link>
+                        <input
+                            type="text"
+                            name=""
+                            id=""
+
+                            placeholder="Age"
+                        />
+                        <Link to="/cards"><button
+                            className="form--submit">
+                            View Cards
+                        </button></Link>
                     </form>
                 </div>
             </section>
@@ -45,5 +45,3 @@ const Home = () => {
 };
 export default Home
 
-
-//  <img className="background-image" src={rickAndMorty} alt="" />

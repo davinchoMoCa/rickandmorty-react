@@ -9,39 +9,58 @@ import CharacterCards from "./CharacterCards";
 
 const App = () => {
 
+  // fetch data from API
   const [posts, setPosts] = useState([]);
-
-  // fetch data
   useEffect(() => {
     fetch("https://rickandmortyapi.com/api/character")
       .then((res) => res.json())
       .then((data) => setPosts(data.results));
   }, []);
 
-  // const [searchInput, setSearchInput] = useState("");
-  // const [searchFilter, setSearchFilter] = useState([]);
+  // mapping each character to the Card component
+  let eachCharacter = posts.map((post) => (
+    <Card key={post.id} post={post} />
+  ))
 
-  // // input search
-  // useEffect(() => {
-  //   searchFilter([]);
-  //   posts.filter((post) => {
-  //     if (post.results.name.toLowerCase().includes(searchInput.toLowerCase())) {
-  //       setSearchFilter((prev) => [...prev, post]);
-  //     }
-  //   });
-  // });
-  // //  input
+  // targetting input value in search bar
+  const [input, setInput] = useState("");
+  const handleChange = ({ target }) => {
+    setInput(target.value);
+    console.log(input)
+  };
+  
+  // output
+  const [searchOutput, setSearchOutput] = useState([]);
+  useEffect(() => {
+    posts.filter((character) => {
+      if (character.name.toLowerCase().includes(input.toLowerCase())) {
+        return setSearchOutput((prev) => [...prev, character]);
+      }
+    });
+  }, []);
+  
 
-  // const handleChange = (event) => {
-  //   setSearchFilter(event.target.value);
-  // };
+
   return (
     <Routes>
       <Route path="/" element={<Home />}></Route>
 
-      <Route path="/cards" element={<CharacterCards posts={posts} />}></Route>
+      <Route
+        path="/cards"
+        element={
+          <CharacterCards
+            
+            searchOutput={searchOutput}
+            handleChange={handleChange}
+            posts={posts}
+            eachCharacter={eachCharacter}
+          />
+        }
+      >
+      </Route>
     </Routes>
   );
 };
 
 export default App;
+

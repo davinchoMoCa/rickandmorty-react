@@ -4,13 +4,9 @@ import React, { useState, useEffect } from "react";
 import logo from "./images/logo.png";
 
 const Header = (props) => {
-  // input
-  const [input, setInput] = useState("");
+  const { handleChange, input, style, searchOutput } = props
+ 
 
-  const handleChange = ({ target }) => {
-    setInput(target.value);
-    console.log(input);
-  };
   return (
     <header className="Header">
       <Link to="/">
@@ -19,10 +15,10 @@ const Header = (props) => {
       </Link>
 
       <input
-        style={props.style}
+        style={style}
         className="header-input"
+        value={input}
         type="text"
-        value={props.input}
         onChange={handleChange}
       />
     </header>

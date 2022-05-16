@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Fetch } from "react-data-fetching";
+// import { Fetch } from "react-data-fetching";
 import Card from "./Card"
 
 const Character = () => {
@@ -13,8 +13,10 @@ const Character = () => {
 
     return (
         <div>
-            <section className="card-container">
+            <section className="card-section">
+                <div className="card-container">
              {posts.map(post => <Card post={post} />)}
+             </div>
             </section>
         </div>
     );

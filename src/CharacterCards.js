@@ -2,11 +2,11 @@ import React from "react";
 import Header from "./Header";
 import Character from "./Character";
 
-const CharacterCards = () => {
+const CharacterCards = ({posts}) => {
   return (
     <div>
       <Header />
-      <Character />
+      <Character posts={posts} />
     </div>
   );
 };

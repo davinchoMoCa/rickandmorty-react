@@ -23,12 +23,14 @@ const Home = () => {
                         type="text" 
                         name="" 
                         id="" 
+                        
                         placeholder="Username"
 />
                         <input 
                         type="text" 
                         name="" 
                         id="" 
+                        
                         placeholder="Age"
                         />
                     <Link to="/cards"><button 

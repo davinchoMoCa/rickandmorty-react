@@ -1,25 +1,28 @@
 import React, { useState, useEffect } from "react";
-// import { Fetch } from "react-data-fetching";
-import Card from "./Card"
+import Card from "./Card";
 
 const Character = () => {
-    const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([]);
 
-    useEffect(() => {
-        fetch("https://rickandmortyapi.com/api/character")
-            .then((res) => res.json())
-            .then((data) => setPosts(data.results))
-    }, []);
+  // fetch data
+  useEffect(() => {
+    fetch("https://rickandmortyapi.com/api/character")
+      .then((res) => res.json())
+      .then((data) => setPosts(data.results));
+  }, []);
 
-    return (
-        <div>
-            <section className="card-section">
-                <div className="card-container">
-             {posts.map(post => <Card post={post} />)}
-             </div>
-            </section>
+  
+  return (
+    <div>
+    
+      <section className="card-section">
+        <div className="card-container">
+          {posts.map((post) => (
+            <Card key={post.id} post={post} />
+          ))}
         </div>
-    );
+      </section>
+    </div>
+  );
 };
 export default Character;
-//  

@@ -3,16 +3,13 @@ import Header from "./Header";
 import Character from "./Character";
 
 const CharacterCards = (props) => {
-  const { posts, handleChange, searchOutput, eachCharacter } = props
+  const { handleChange, welcome, output, eachCharacter } = props;
+  // console.log(welcome)
   return (
     <div>
-      <Header
-        handleChange={handleChange}
-        searchOutput={searchOutput}
-      />
-      <Character 
-         eachCharacter={eachCharacter}
-      />
+      <Header handleChange={handleChange} />
+      <p className="welcome-message">Welcome {welcome} ✨</p>
+      <Character eachCharacter={eachCharacter} />
     </div>
   );
 };

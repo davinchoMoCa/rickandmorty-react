@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Card from "./Card";
 
 const Character = (props) => {
-  const { eachCharacter } = props;
+  const { filtered } = props;
   return (
     <div>
       <section className="card-section">
-        <div className="card-container">{eachCharacter}</div>
+        <div className="card-container"> {filtered}</div>
       </section>
     </div>
   );

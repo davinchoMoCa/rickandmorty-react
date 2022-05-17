@@ -2,7 +2,6 @@ import React from "react";
 import Character from "./Character";
 
 const Card = ({ post }) => {
-  
   return (
     <div className="card">
       <div className="card-front">

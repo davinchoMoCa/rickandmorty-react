@@ -8,6 +8,13 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
 const App = () => {
+  // targetting input value in search bar
+  const [input, setInput] = useState("");
+  const handleChange = ({ target }) => {
+    setInput(target.value);
+    // console.log(input)
+  };
+
   // fetch data from API
   const [posts, setPosts] = useState([]);
   useEffect(() => {
@@ -16,31 +23,40 @@ const App = () => {
       .then((data) => setPosts(data.results));
   }, []);
 
-  // targetting input value in search bar
-  const [input, setInput] = useState("");
-  const handleChange = ({ target }) => {
-    setInput(target.value);
-    // console.log(input)
-  };
+  // mapping each character to the Card component
+  let eachCharacter = posts.map((post) => <Card key={post.id} post={post} />);
 
   // Welcome message based on user's username input
-  const [welcome, setWelcome] = useState("");
-  const welcomeMess = (e) => {
-    setWelcome(e.target.value);
+  const [userName, setUserName] = useState("");
+  const user = (e) => {
+    setUserName(e.target.value);
     // console.log(welcome)
   };
+
+  // localStorage
+  useEffect(() => {
+    const username = JSON.parse(localStorage.getItem("username"));
+    if (username) {
+      setUserName(username);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("username", JSON.stringify(userName));
+  }, [userName]);
+
   //  submit event for button
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (welcome.length > 3) {
+    if (userName.length > 3) {
       navigate("/cards");
     } else {
       alert("enter username");
     }
     // console.log(welcome);
   };
-  // oswhytecodes
+
   // filter the data from the api
   const [output, setOutput] = useState([]);
   useEffect(() => {
@@ -50,25 +66,24 @@ const App = () => {
         setOutput((prev) => [...prev, post]);
       }
     });
-    // console.log(output);
+    console.log(output);
   }, [input]);
-  // mapping each character to the Card component
-  let eachCharacter = posts.map((post) => <Card key={post.id} post={post} />);
+
   return (
     <Routes>
       <Route
         path="/"
-        element={<Home handleSubmit={handleSubmit} welcomeMess={welcomeMess} />}
+        element={<Home handleSubmit={handleSubmit} user={user} />}
       ></Route>
 
       <Route
         path="/cards"
         element={
           <CharacterCards
+            output={output}
             handleChange={handleChange}
-            posts={posts}
             eachCharacter={eachCharacter}
-            welcome={welcome}
+            userName={userName}
           />
         }
       ></Route>
@@ -78,3 +93,6 @@ const App = () => {
 
 export default App;
 
+// const savedName = localStorage.getItem("username")
+//     const initialValue = JSON.parse(savedName)
+//     return initialValue || ""

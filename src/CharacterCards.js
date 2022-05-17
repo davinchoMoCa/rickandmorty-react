@@ -1,14 +1,15 @@
-import React from "react";
 import Header from "./Header";
 import Character from "./Character";
+import Card from "./Card";
 
 const CharacterCards = (props) => {
-  const { handleChange, userName, eachCharacter } = props;
+  const { handleChange, input, filtered, userName, eachCharacter } = props;
+
   return (
     <div>
-      <Header handleChange={handleChange} />
+      <Header handleChange={handleChange} input={input} />
       <p className="welcome-message">Welcome {userName} ✨</p>
-      <Character eachCharacter={eachCharacter} />
+      <Character filtered={filtered} />
     </div>
   );
 };

@@ -5,7 +5,8 @@ import rick from "./images/rick.png";
 import morty from "./images/morty.png";
 
 const Home = (props) => {
-  const { welcomeMess, handleSubmit, input } = props;
+  const { user, handleSubmit } = props;
+
   return (
     <div className="Home">
       <Header style={{ display: "none" }} />
@@ -18,16 +19,9 @@ const Home = (props) => {
         <div className="form-container">
           <form onSubmit={handleSubmit}>
             <h1 style={{ marginBottom: 20 }}>Welcome</h1>
-            <input
-              type="text"
-              name=""
-              onChange={welcomeMess}
-              placeholder="Username"
-            />
+            <input type="text" name="" onChange={user} placeholder="Username" />
 
-            {/* <Link to="/cards"> */}
             <button className="form--submit">View Cards</button>
-            {/* </Link> */}
           </form>
         </div>
       </section>

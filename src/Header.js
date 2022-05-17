@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "./images/logo.png";
 
 const Header = (props) => {
-  const { handleChange, input, style, output } = props;
+  const { handleChange, style } = props;
 
   return (
     <header className="Header">
@@ -15,6 +15,7 @@ const Header = (props) => {
         style={style}
         className="header-input"
         type="text"
+        placeholder="Search Character..."
         onChange={handleChange}
       />
     </header>

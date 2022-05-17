@@ -110,3 +110,11 @@ button {
   font-size: 1em;
   cursor: pointer;
 }
+
+/*  Cards page */
+.welcome-message {
+  font-weight: 800;
+  text-align: center;
+  margin-top: 1em;
+  font-size: 1.7em;
+}

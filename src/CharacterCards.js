@@ -3,11 +3,11 @@ import Character from "./Character";
 import Card from "./Card";
 
 const CharacterCards = (props) => {
-  const { handleChange, input, filtered, userName, eachCharacter } = props;
+  const { handleChange, filtered, userName } = props;
 
   return (
     <div>
-      <Header handleChange={handleChange} input={input} />
+      <Header handleChange={handleChange} />
       <p className="welcome-message">Welcome {userName} ✨</p>
       <Character filtered={filtered} />
     </div>

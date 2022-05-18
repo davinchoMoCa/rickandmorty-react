@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "./images/logo.png";
 
 const Header = (props) => {
-  const { handleChange, input, style } = props;
+  const { handleChange, style } = props;
   return (
     <header className="Header">
       <Link to="/">

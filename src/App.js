@@ -23,18 +23,16 @@ const App = () => {
   };
 
   // Filter the data from the api
-  
-  const filtered = posts.filter((post) =>{
-  if (input === "") {
-    return post
-  } else {
-   return post.name.toLowerCase().includes(input.toLowerCase())
-  }}
-  ).map((post) => <Card key={post.id} post={post} />);
-  
-  console.log(filtered);
   // Mapping each character to the Card component
-  // const eachCharacter = posts.map((post) => <Card key={post.id} post={post} />);
+  const filtered = posts
+    .filter((post) => {
+      if (input === "") {
+        return post;
+      } else {
+        return post.name.toLowerCase().includes(input.toLowerCase());
+      }
+    })
+    .map((post) => <Card key={post.id} post={post} />);
 
   // Welcome message based on user's username input
   const [userName, setUserName] = useState("");
@@ -42,7 +40,7 @@ const App = () => {
     setUserName(e.target.value);
   };
 
-  // LocalStorage
+  // LocalStorage for saving username input
   useEffect(() => {
     const username = JSON.parse(localStorage.getItem("username"));
     if (username) {
@@ -78,7 +76,6 @@ const App = () => {
           <CharacterCards
             filtered={filtered}
             handleChange={handleChange}
-            // eachCharacter={eachCharacter}
             userName={userName}
           />
         }
@@ -88,13 +85,3 @@ const App = () => {
 };
 
 export default App;
-// const [output, setOutput] = useState([]);
-//   useEffect(() => {
-//     setOutput([]);
-//     posts.filter((post) => {
-//       if(post.name.toLowerCase().includes(input.toLowerCase())) {
-//         setOutput((prev) => [...prev, post]);
-//       }
-//     });
-//     console.log(output);
-//   }, [input]);

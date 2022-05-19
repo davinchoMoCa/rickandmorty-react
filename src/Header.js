@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import logo from "./images/logo.png";
+import close from "./images/close.svg"
 
 const Header = (props) => {
-  const { handleChange, style } = props;
+  const { handleChange, style, input } = props;
   return (
     <header className="Header">
       <Link to="/">
@@ -13,10 +14,12 @@ const Header = (props) => {
       <input
         style={style}
         className="header-input"
-        type="text"
+        type="search"
+        value={input}
         placeholder="Search Character..."
         onChange={handleChange}
       />
+   
     </header>
   );
 };

@@ -6,6 +6,7 @@ import Home from "./Home";
 import CharacterCards from "./CharacterCards";
 import React, { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import CharacterProfiles from "./CharacterProfiles";
 
 const App = () => {
   // Fetch data from API
@@ -67,19 +68,26 @@ const App = () => {
     <Routes>
       <Route
         path="/"
-        element={<Home handleSubmit={handleSubmit} user={user} />}
+        element={
+          <Home
+            handleSubmit={handleSubmit} 
+            user={user} 
+          />}
       ></Route>
 
       <Route
         path="/cards"
         element={
           <CharacterCards
+            input={input}
             filtered={filtered}
             handleChange={handleChange}
             userName={userName}
           />
         }
       ></Route>
+
+      <Route path="/profiles/:char" element={<CharacterProfiles />}></Route>
     </Routes>
   );
 };

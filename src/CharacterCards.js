@@ -7,7 +7,7 @@ const CharacterCards = (props) => {
 
   return (
     <div>
-      <Header handleChange={handleChange} />
+      <Header  handleChange={handleChange} />
       <p className="welcome-message">Welcome {userName} ✨</p>
       <Character filtered={filtered} />
     </div>

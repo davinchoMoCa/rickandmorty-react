@@ -20,7 +20,7 @@ const CharacterProfiles = (props) => {
       <img onClick={() => navigate(-1)} className="back-btn" src={back} />
       <div>
         <h1 style={{ margin: "1em 0", textAlign: "center" }}>
-          Character Profile: {characters[profileId].name}
+          Character Profile: 
         </h1>
       </div>
 

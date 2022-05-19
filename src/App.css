@@ -44,6 +44,8 @@
 .card {
   display: flex;
   flex-direction: row;
+  margin-bottom: 1em;
+  justify-content: center;
 }
 /* 
 .card-front {
@@ -55,7 +57,14 @@
 .card-back {
   display: none;
 }
-
+.card-text {
+  margin-top: .5em;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+  justify-content: center;
+  align-items: center;
+}
 /* Home Page */
 .Home {
   background-color: #c4eafbbd;
@@ -130,4 +139,5 @@ button {
   width: 30px;
   right: 0;
   transform: translate(-50px, -65px);
+  cursor: pointer;
 }

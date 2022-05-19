@@ -7,6 +7,7 @@ const CharacterCards = (props) => {
 
   return (
     <div>
+      {/*  data for the Cards page */}
       <Header handleChange={handleChange} />
       <p className="welcome-message">Welcome {userName} ✨</p>
       <Character filtered={filtered} />

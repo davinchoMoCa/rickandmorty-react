@@ -7,6 +7,7 @@ import CharacterCards from "./CharacterCards";
 import React, { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import CharacterProfiles from "./CharacterProfiles";
+import Profile from "./Profile";
 
 const App = () => {
   // Fetch data from API
@@ -35,6 +36,10 @@ const App = () => {
     })
     .map((post) => <Card key={post.id} post={post} />);
 
+  const characters = posts.map((character) => (
+    <Profile key={character.id} character={character} />
+  ));
+  console.log(characters );
   // Welcome message based on user's username input
   const [userName, setUserName] = useState("");
   const user = (e) => {
@@ -84,7 +89,7 @@ const App = () => {
       ></Route>
       <Route
         path="/characters/:profileId"
-        element={<CharacterProfiles />}
+        element={<CharacterProfiles characters={characters} />}
       ></Route>
     </Routes>
   );

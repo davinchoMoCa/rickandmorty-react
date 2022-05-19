@@ -122,15 +122,6 @@ button {
   margin-top: 1em;
   font-size: 1.7em;
 }
-<<<<<<< HEAD
-.close-button {
-  width: 10px;
-  position: absolute;
-  z-index: 1000;
-  right: 0;
-  transform: translate(-50px);
-  opacity: 0.6;
-}
 
 /* Profile */
 
@@ -140,5 +131,3 @@ button {
   right: 0;
   transform: translate(-50px, -65px);
 }
-=======
->>>>>>> 216b672b99a3f795daabfd2d48e557f222ef413b

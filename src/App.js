@@ -58,7 +58,7 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (userName.length > 3) {
-      navigate("/cards");
+      navigate("/characters");
     } else {
       alert("enter username");
     }
@@ -72,7 +72,7 @@ const App = () => {
       ></Route>
 
       <Route
-        path="/cards"
+        path="/characters"
         element={
           <CharacterCards
             input={input}
@@ -82,7 +82,6 @@ const App = () => {
           />
         }
       ></Route>
-
       <Route
         path="/characters/:profileId"
         element={<CharacterProfiles />}

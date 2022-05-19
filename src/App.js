@@ -68,11 +68,7 @@ const App = () => {
     <Routes>
       <Route
         path="/"
-        element={
-          <Home
-            handleSubmit={handleSubmit} 
-            user={user} 
-          />}
+        element={<Home handleSubmit={handleSubmit} user={user} />}
       ></Route>
 
       <Route
@@ -87,7 +83,10 @@ const App = () => {
         }
       ></Route>
 
-      <Route path="/profiles/:char" element={<CharacterProfiles />}></Route>
+      <Route
+        path="/characters/:profileId"
+        element={<CharacterProfiles />}
+      ></Route>
     </Routes>
   );
 };

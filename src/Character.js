@@ -1,4 +1,3 @@
-import React from "react";
 import Card from "./Card";
 
 const Character = (props) => {
@@ -6,7 +5,7 @@ const Character = (props) => {
   return (
     <div>
       <section className="card-section">
-        <div className="card-container"> {filtered}</div>
+        <div className="card-container">{filtered}</div>
       </section>
     </div>
   );

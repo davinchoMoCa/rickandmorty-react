@@ -1,12 +1,14 @@
 import Character from "./Character";
 import Card from "./Card";
 import Header from "./Header";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import back from "./images/back.png";
 import CharacterCards from "./CharacterCards";
 
 const CharacterProfiles = (props) => {
-  const { style } = props;
+  const { style, post } = props;
+  const params = useParams();
+  const profileId = params.profileId;
   const navigate = useNavigate();
   return (
     <div>
@@ -14,10 +16,12 @@ const CharacterProfiles = (props) => {
       <img onClick={() => navigate(-1)} className="back-btn" src={back} />
       <div>
         <h1 style={{ margin: "1em 0", textAlign: "center" }}>
-          Character Profile
+          Character Profile {profileId}
         </h1>
       </div>
-      <section></section>
+      <section>
+     
+      </section>
     </div>
   );
 };

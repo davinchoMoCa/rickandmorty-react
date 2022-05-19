@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import logo from "./images/logo.png";
-import close from "./images/close.svg"
 
 const Header = (props) => {
   const { handleChange, style, input } = props;

@@ -15,12 +15,16 @@
   background-color: #a9d3e9;
   justify-content: space-between;
   align-items: center;
+  -webkit-box-shadow: 10px 10px 16px -7px rgba(138, 136, 138, 1);
+  -moz-box-shadow: 10px 10px 16px -7px rgba(138, 136, 138, 1);
+  box-shadow: 1px 1px 10px -2px rgba(138, 136, 138, 1);
 }
 .header-input {
   width: 220px;
   padding: 10px 15px;
   border-radius: 10px;
   border: 1px solid gray;
+  position: relative;
 }
 .card-section {
   width: 100vw;
@@ -28,10 +32,10 @@
 }
 .card-container {
   padding: 1em;
-
   margin-top: 2em;
   display: grid;
-
+  justify-items: center;
+  align-items: center;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 40px;
@@ -117,4 +121,21 @@ button {
   text-align: center;
   margin-top: 1em;
   font-size: 1.7em;
+}
+.close-button {
+  width: 10px;
+  position: absolute;
+  z-index: 1000;
+  right: 0;
+  transform: translate(-50px);
+  opacity: 0.6;
+}
+
+/* Profile */
+
+.back-btn {
+  position: absolute;
+  width: 30px;
+  right: 0;
+  transform: translate(-50px, -65px);
 }

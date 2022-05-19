@@ -1,11 +1,14 @@
-import React from "react";
 import Character from "./Character";
+import { Link } from "react-router-dom";
 
 const Card = ({ post }) => {
   return (
     <div className="card">
       <div className="card-front">
-        <img src={post.image} alt="" />
+        <Link to={`/characters/${post.id}`}>
+          {""}
+          <img src={post.image} alt="" />{" "}
+        </Link>
         <p> {post.name}</p>
       </div>
       <div className="card-back">

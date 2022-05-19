@@ -19,7 +19,6 @@ const Home = (props) => {
           <form onSubmit={handleSubmit}>
             <h1 style={{ marginBottom: 20 }}>Welcome</h1>
             <input type="text" name="" onChange={user} placeholder="Username" />
-
             <button className="form--submit">View Cards</button>
           </form>
         </div>

@@ -24,6 +24,31 @@ const App = () => {
     setInput(target.value);
   };
 
+  // populate the page with more character cards
+  const [moreCharacters, setMoreCharacters] = useState([]);
+  const [count, setCount] = useState(2);
+
+  const nextPage = () => {
+    setCount((prev) => prev + 1);
+  };
+  // // more cards
+  // useEffect(() => {
+  //   fetch(`https://rickandmortyapi.com/api/character/?page=${count}`)
+  //     .then((res) => res.json())
+  //     .then((data) =>
+  //       setMoreCharacters(data.results))
+  // }, []);
+  // console.log(moreCharacters);
+
+
+  // let moreCharactersClick = () => {
+  //   let moreChars = moreCharacters.map((moreChars) => {
+  //     <Card key={moreChars.id} more={moreChars} />;
+  //   });
+
+  //   return moreChars
+  // };
+
   // Filter the data from the api
   // Mapping each character to the Card component
   const filtered = posts
@@ -39,7 +64,6 @@ const App = () => {
   const characters = posts.map((character) => (
     <Profile key={character.id} character={character} />
   ));
-  console.log(characters );
   // Welcome message based on user's username input
   const [userName, setUserName] = useState("");
   const user = (e) => {
@@ -84,12 +108,22 @@ const App = () => {
             filtered={filtered}
             handleChange={handleChange}
             userName={userName}
+            // raw data from the api call
+            posts={posts}
+            // moreCharacters={moreCharacters}
+            // moreCharactersClick={moreCharactersClick}
           />
         }
       ></Route>
       <Route
         path="/characters/:profileId"
-        element={<CharacterProfiles characters={characters} />}
+        element={
+          <CharacterProfiles
+            characters={characters}
+            // raw data from the api call
+            posts={posts}
+          />
+        }
       ></Route>
     </Routes>
   );

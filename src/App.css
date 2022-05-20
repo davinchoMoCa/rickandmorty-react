@@ -47,24 +47,36 @@
   margin-bottom: 1em;
   justify-content: center;
 }
+ .card-profile {
+  display: flex;
+  margin-inline: auto;
+  width: 320px;
+  flex-direction: column;
+  margin-bottom: 1em;
+  justify-content: center;
+ }
+
+
+ .moreChar-btn {
+   border-radius: 1000px;
+   width: 90px;
+   height:90px;
+ }
 /* 
 .card-front {
    grid-area: 1 / 1 / 6 / 4;  } 
 */
+li {
+  list-style:georgian;
+  padding-bottom: .3em;
+}
 .card-front img {
   border-radius: 14px;
 }
 .card-back {
   display: none;
 }
-.card-text {
-  margin-top: .5em;
-  display: flex;
-  flex-direction: column;
-  font-size: 1.5em;
-  justify-content: center;
-  align-items: center;
-}
+
 /* Home Page */
 .Home {
   background-color: #c4eafbbd;
@@ -73,6 +85,7 @@
 .login {
   width: 100%;
   margin-inline: auto;
+  margin-top: 6em;
 }
 img {
   max-width: 100%;
@@ -136,8 +149,44 @@ button {
 
 .back-btn {
   position: absolute;
-  width: 30px;
+  width: 40px;
   right: 0;
-  transform: translate(-50px, -65px);
+  transform: translate(-80px, -72px);
   cursor: pointer;
+}
+.profile-card {
+  background-color: #a9d3e9c7;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 2em 3em;
+  justify-content: center;
+  align-items: center;
+}
+.profile-front img {
+  border-radius: 1000px;
+  width: 10em;
+}
+.profile-text {
+  margin-top: 0.5em;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1em;
+  justify-content: center;
+  align-items: center;
+  padding-top: .2em;
+}
+.profile-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: rgb(234, 233, 236);
+  color: #444;
+  font-size: 12px;
+}
+.profile-seemore {
+  margin-top: 1em;
+}
+.bold-text {
+  font-weight: bold;
+  font-size: 1.2em
 }

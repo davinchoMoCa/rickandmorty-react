@@ -2,7 +2,8 @@ import Character from "./Character";
 import Card from "./Card";
 import Header from "./Header";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import back from "./images/back.png";
+// import back from "./images/back.png";
+import white from "./images/back-white.png"
 import CharacterCards from "./CharacterCards";
 import Profile from "./Profile";
 
@@ -19,7 +20,7 @@ const CharacterProfiles = (props) => {
   return (
     <div>
       <Header style={{ display: "none" }} />
-      <img onClick={() => navigate(-1)} className="back-btn" src={back} />
+      <img onClick={() => navigate(-1)} className="back-btn" src={white} />
       <div>
         
       </div>

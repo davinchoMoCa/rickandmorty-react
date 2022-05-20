@@ -17,7 +17,7 @@ const Profile = ({ character, posts }) => {
     setCount((prev) => prev - 1);
   };
   // h1 style
-  const h1Style = { margin: "1em 0", textAlign: "center", fontSize: "2em" };
+  const h1Style = { margin: "1em 0", textAlign: "center", fontSize: "2em", color:"rgb(48, 88, 112)" };
   //  profile
   const profileCard = {
     display: "flex",

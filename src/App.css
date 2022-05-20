@@ -165,7 +165,8 @@ button {
 }
 .profile-front img {
   border-radius: 1000px;
-  width: 10em;
+  border: 4px solid rgb(48, 88, 112);
+  width: 12em;
 }
 .profile-text {
   margin-top: 0.5em;

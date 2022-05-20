@@ -47,28 +47,27 @@
   margin-bottom: 1em;
   justify-content: center;
 }
- .card-profile {
+.card-profile {
   display: flex;
   margin-inline: auto;
   width: 320px;
   flex-direction: column;
   margin-bottom: 1em;
   justify-content: center;
- }
+}
 
-
- .moreChar-btn {
-   border-radius: 1000px;
-   width: 90px;
-   height:90px;
- }
+.moreChar-btn {
+  border-radius: 1000px;
+  width: 90px;
+  height: 90px;
+}
 /* 
 .card-front {
    grid-area: 1 / 1 / 6 / 4;  } 
 */
 li {
-  list-style:georgian;
-  padding-bottom: .3em;
+  list-style: georgian;
+  padding-bottom: 0.3em;
 }
 .card-front img {
   border-radius: 14px;
@@ -155,7 +154,21 @@ button {
   cursor: pointer;
 }
 .profile-card {
-  background-color: #a9d3e9c7;
+  background-color: #6eb4d9cb;
+  background-image: radial-gradient(
+      white,
+      rgba(255, 255, 255, 0.2) 2px,
+      transparent 40px
+    ),
+    radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 30px),
+    radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 40px),
+    radial-gradient(
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.1) 2px,
+      transparent 30px
+    );
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -175,7 +188,7 @@ button {
   font-size: 1.1em;
   justify-content: center;
   align-items: center;
-  padding-top: .2em;
+  padding-top: 0.2em;
 }
 .profile-btn {
   padding: 10px 20px;
@@ -189,5 +202,5 @@ button {
 }
 .bold-text {
   font-weight: bold;
-  font-size: 1.2em
+  font-size: 1.2em;
 }

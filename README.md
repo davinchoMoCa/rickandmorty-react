@@ -46,3 +46,9 @@
 
 1. For the characters that aren't in the first twenty, on page reload the cards disappear
 
+## Things I would like to do 
+
+1. Link the search filter to the entire results date
+2. Outline the cards a different color based on gender
+3. Add some kind of hover animation on the Cards page (maybe a slight scale)
+4. Add media queries

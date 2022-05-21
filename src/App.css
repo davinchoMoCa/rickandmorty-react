@@ -37,7 +37,7 @@
   justify-items: center;
   align-items: center;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-template-rows: repeat(5, 1fr);
+  /* grid-template-rows: repeat(5, 1fr); */
   grid-column-gap: 40px;
   grid-row-gap: 40px;
 }
@@ -60,6 +60,7 @@
   border-radius: 1000px;
   width: 90px;
   height: 90px;
+  margin-bottom: 5em;
 }
 /* 
 .card-front {
@@ -79,6 +80,7 @@ li {
 /* Home Page */
 .Home {
   background-color: #c4eafbbd;
+  width: 100vw;
   height: 100vh;
 }
 .login {

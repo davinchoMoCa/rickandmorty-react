@@ -1,31 +1,35 @@
 import Character from "./Character";
 import Card from "./Card";
 import Header from "./Header";
+
 import { Link, useNavigate, useParams } from "react-router-dom";
 // import back from "./images/back.png";
-import white from "./images/back-white.png"
+import white from "./images/back-white.png";
 import CharacterCards from "./CharacterCards";
 import Profile from "./Profile";
 
 const CharacterProfiles = (props) => {
-  const { style, characters, posts } = props;
-
+  const { style, characters, moreCards, posts, moreCardsProfiles } = props;
   const params = useParams();
   const profileId = params.profileId;
 
   const navigate = useNavigate();
-  let charName = posts.map(char => char.name)
-  let charId = posts.map(char => char.id)
+
+  let renderedProfile = () => {
+    if (profileId >= 1 && profileId <= 20) {
+      return characters.filter((char) => profileId === char.key);
+    } else {
+      return moreCardsProfiles.filter((more) => profileId === more.key);
+    }
+  };
 
   return (
     <div>
       <Header style={{ display: "none" }} />
       <img onClick={() => navigate(-1)} className="back-btn" src={white} />
-      <div>
-        
-      </div>
+      <div></div>
 
-      <section>{characters.filter((char) => profileId === char.key)}</section>
+      <section>{renderedProfile()}</section>
     </div>
   );
 };

@@ -7,16 +7,19 @@ import CharacterCards from "./CharacterCards";
 import React, { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import CharacterProfiles from "./CharacterProfiles";
+import MoreCards from "./MoreCards";
+import MoreCardsProfile from "./MoreCardsProfile";
 import Profile from "./Profile";
 
 const App = () => {
   // Fetch data from API
+  let api = "https://rickandmortyapi.com/api/character";
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch("https://rickandmortyapi.com/api/character")
+    fetch(api)
       .then((res) => res.json())
       .then((data) => setPosts(data.results));
-  }, []);
+  }, [api]);
 
   // Targetting input value in search bar
   const [input, setInput] = useState("");
@@ -26,31 +29,39 @@ const App = () => {
 
   // populate the page with more character cards
   const [moreCharacters, setMoreCharacters] = useState([]);
-  const [count, setCount] = useState(2);
+  const [count, setCount] = useState(1);
 
   const nextPage = () => {
     setCount((prev) => prev + 1);
+    return moreCards;
   };
-  // // more cards
+
+  // more cards
+  useEffect(() => {
+    fetch(`https://rickandmortyapi.com/api/character/?page=${count}`)
+      .then((res) => res.json())
+      .then((data) => setMoreCharacters(data.resultsgit ))
+  }, [count]);
+
+  const moreCards = moreCharacters.map(
+    (moreChars) =>
+      count > 1 && <MoreCards key={moreChars.id} moreChars={moreChars} />
+  );
+
+  const moreCardsProfiles = moreCharacters.map((moreChars) => (
+    <MoreCardsProfile key={moreChars.id} moreChars={moreChars} />
+  ));
+
   // useEffect(() => {
-  //   fetch(`https://rickandmortyapi.com/api/character/?page=${count}`)
-  //     .then((res) => res.json())
-  //     .then((data) =>
-  //       setMoreCharacters(data.results))
+  //   setCount(JSON.parse(window.localStorage.getItem("count")));
   // }, []);
-  // console.log(moreCharacters);
 
-
-  // let moreCharactersClick = () => {
-  //   let moreChars = moreCharacters.map((moreChars) => {
-  //     <Card key={moreChars.id} more={moreChars} />;
-  //   });
-
-  //   return moreChars
-  // };
+  // useEffect(() => {
+  //   window.localStorage.setItem("count", count);
+  // }, [count]);
 
   // Filter the data from the api
-  // Mapping each character to the Card component
+  // Mapping each character to the Card component (the first set of cards)
   const filtered = posts
     .filter((post) => {
       if (input === "") {
@@ -61,9 +72,11 @@ const App = () => {
     })
     .map((post) => <Card key={post.id} post={post} />);
 
+  // profile card data
   const characters = posts.map((character) => (
     <Profile key={character.id} character={character} />
   ));
+
   // Welcome message based on user's username input
   const [userName, setUserName] = useState("");
   const user = (e) => {
@@ -93,6 +106,7 @@ const App = () => {
     }
   };
 
+  // jsx
   return (
     <Routes>
       <Route
@@ -104,22 +118,28 @@ const App = () => {
         path="/characters"
         element={
           <CharacterCards
+            // filtering data
             input={input}
             filtered={filtered}
             handleChange={handleChange}
+            // home page username
             userName={userName}
             // raw data from the api call
             posts={posts}
-            // moreCharacters={moreCharacters}
-            // moreCharactersClick={moreCharactersClick}
+            // populating more cards via the click event
+            moreCards={moreCards}
+            nextPage={nextPage}
           />
         }
       ></Route>
+
       <Route
         path="/characters/:profileId"
         element={
           <CharacterProfiles
+            moreCards={moreCards}
             characters={characters}
+            moreCardsProfiles={moreCardsProfiles}
             // raw data from the api call
             posts={posts}
           />

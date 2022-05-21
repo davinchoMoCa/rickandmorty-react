@@ -1,19 +1,19 @@
 import Character from "./Character";
 import { Link } from "react-router-dom";
 
-const Card = ({ post }) => {
-  
+const MoreCards = ({ moreChars }) => {
+
   return (
     <div className="card">
       <div className="card-front">
-        <Link to={`${post.id}`} >
+        <Link to={`${moreChars.id}`} >
           {""}
-          <img src={post.image} alt="" />{" "}
+          <img src={moreChars.image} alt="" />{" "}
         </Link>
-        <p> {post.name}</p>
+        <p> {moreChars.name}</p>
       </div>
     
     </div>
   );
 };
-export default Card;
+export default MoreCards;

@@ -1,22 +1,18 @@
 import CharacterProfiles from "./CharacterProfiles";
 import { useState } from "react";
 
-const Profile = ({ character, posts }) => {
+const MoreCardsProfile = ({ moreChars }) => {
   // button to show more character details
   const [moreInfo, setMoreInfo] = useState(false);
+
   const handleClick = () => {
     setMoreInfo((prev) => !prev);
   };
   // switching through characters
 
-  const [count, setCount] = useState(1);
-  const nextCharacter = () => {
-    let charId = `https://rickandmortyapi.com/api/character/${count}`;
-    setCount((prev) => prev + 1);
-  };
-  const lastCharacter = () => {
-    setCount((prev) => prev - 1);
-  };
+  const [count, setCount] = useState(0);
+  const nextCharacter = () => {};
+  const lastCharacter = () => {};
   // h1 style
   const h1Style = {
     margin: "1em 0",
@@ -31,24 +27,26 @@ const Profile = ({ character, posts }) => {
     textAlign: "center",
     marginTop: ".5em",
   };
+
+  //  my return
   return (
     <section>
-      <h1 style={h1Style}> Character : {character.name}</h1>
+      <h1 style={h1Style}> Character : {moreChars.name}</h1>
 
       <div className="card-profile">
         <div className="profile-card">
           <div className="profile-front">
-            <img src={character.image} alt="" />
+            <img src={moreChars.image} alt="" />
           </div>
           <div className="profile-text">
             <span className="bold-text" style={{ textAlign: "center" }}>
               {" "}
-              {character.name}{" "}
+              {moreChars.name}{" "}
             </span>
             <div style={profileCard}>
-              <p>{character.species}</p>
+              <p>{moreChars.species}</p>
               <span> | </span>
-              <p>{character.gender}</p>
+              <p>{moreChars.gender}</p>
             </div>
           </div>
           <div>
@@ -76,14 +74,14 @@ const Profile = ({ character, posts }) => {
           {moreInfo && (
             <div className="profile-seemore">
               <div>
-                <li> Location: {character.location.name}</li>
+                <li> Location: {moreChars.location.name}</li>
                 <li>
                   {" "}
-                  Seen in at least {character.episode.length}{" "}
-                  {character.episode.length > 2 ? "episodes" : "episode"}{" "}
+                  Seen in at least {moreChars.episode.length}{" "}
+                  {moreChars.episode.length > 2 ? "episodes" : "episode"}{" "}
                 </li>
                 <li>
-                  {character.name} is <span> {character.status}</span>
+                  {moreChars.name} is <span> {moreChars.status}</span>
                 </li>
               </div>
             </div>
@@ -101,11 +99,11 @@ const Profile = ({ character, posts }) => {
           }}
         >
           {/*  buttons to navigate through characters */}
-          <button onClick={lastCharacter}>Last</button>
-          <button onClick={nextCharacter}>Next</button>
+          <button onClick={lastCharacter()}>Last</button>
+          <button onClick={nextCharacter()}>Next</button>
         </div>
       </div>
     </section>
   );
 };
-export default Profile;
+export default MoreCardsProfile;

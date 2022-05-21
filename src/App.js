@@ -40,7 +40,7 @@ const App = () => {
   useEffect(() => {
     fetch(`https://rickandmortyapi.com/api/character/?page=${count}`)
       .then((res) => res.json())
-      .then((data) => setMoreCharacters(data.resultsgit ))
+      .then((data) => setMoreCharacters(data.resultsgit));
   }, [count]);
 
   const moreCards = moreCharacters.map(

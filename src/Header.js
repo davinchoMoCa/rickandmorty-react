@@ -18,7 +18,6 @@ const Header = (props) => {
         placeholder="Search Character..."
         onChange={handleChange}
       />
-   
     </header>
   );
 };

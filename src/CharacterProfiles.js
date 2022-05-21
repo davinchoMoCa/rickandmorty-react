@@ -20,7 +20,10 @@ const CharacterProfiles = (props) => {
   return (
     <div>
       <Header style={{ display: "none" }} />
-      <img onClick={() => navigate(-1)} className="back-btn" src={white} />
+        <Link to="/characters">
+        {" "}
+        <img className="back-btn" alt="Back to Characters Page" src={white} />
+      </Link>
       <div>
         
       </div>

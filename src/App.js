@@ -23,32 +23,7 @@ const App = () => {
   const handleChange = ({ target }) => {
     setInput(target.value);
   };
-
-  // populate the page with more character cards
-  const [moreCharacters, setMoreCharacters] = useState([]);
-  const [count, setCount] = useState(2);
-
-  const nextPage = () => {
-    setCount((prev) => prev + 1);
-  };
-  // // more cards
-  // useEffect(() => {
-  //   fetch(`https://rickandmortyapi.com/api/character/?page=${count}`)
-  //     .then((res) => res.json())
-  //     .then((data) =>
-  //       setMoreCharacters(data.results))
-  // }, []);
-  // console.log(moreCharacters);
-
-
-  // let moreCharactersClick = () => {
-  //   let moreChars = moreCharacters.map((moreChars) => {
-  //     <Card key={moreChars.id} more={moreChars} />;
-  //   });
-
-  //   return moreChars
-  // };
-
+  
   // Filter the data from the api
   // Mapping each character to the Card component
   const filtered = posts
@@ -110,8 +85,7 @@ const App = () => {
             userName={userName}
             // raw data from the api call
             posts={posts}
-            // moreCharacters={moreCharacters}
-            // moreCharactersClick={moreCharactersClick}
+            
           />
         }
       ></Route>

@@ -1,5 +1,6 @@
 import CharacterProfiles from "./CharacterProfiles";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Profile = ({ character, posts }) => {
   // button to show more character details
@@ -7,11 +8,20 @@ const Profile = ({ character, posts }) => {
   const handleClick = () => {
     setMoreInfo((prev) => !prev);
   };
-  
-  // switching through characters will be added
+  // switching through characters
+
+  const [count, setCount] = useState(1);
+
+  let charIdIncrement = character.id + 1;
+  let charIdDecrement = character.id - 1;
 
   // h1 style
-  const h1Style = { margin: "1em 0", textAlign: "center", fontSize: "2em", color:"rgb(48, 88, 112)" };
+  const h1Style = {
+    margin: "1em 0",
+    textAlign: "center",
+    fontSize: "2em",
+    color: "rgb(48, 88, 112)",
+  };
   //  profile
   const profileCard = {
     display: "flex",
@@ -89,8 +99,14 @@ const Profile = ({ character, posts }) => {
           }}
         >
           {/*  buttons to navigate through characters */}
-//           <button onClick={lastCharacter}>Last</button>
-//           <button onClick={nextCharacter}>Next</button>
+          <Link to={`/characters/${charIdDecrement}`}>
+            {" "}
+            <button>Last</button>
+          </Link>
+          <Link to={`/characters/${charIdIncrement}`}>
+            {" "}
+            <button>Next</button>{" "}
+          </Link>
         </div>
       </div>
     </section>

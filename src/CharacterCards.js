@@ -13,9 +13,7 @@ const CharacterCards = (props) => {
       <Character filtered={filtered} />
 
       <div style={{textAlign:"center", margin:"2em 0 6em"}}>
-        <button className="moreChar-btn">
-          MORE 
-        </button>
+       
       </div>
     </div>
   );

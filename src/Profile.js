@@ -7,15 +7,9 @@ const Profile = ({ character, posts }) => {
   const handleClick = () => {
     setMoreInfo((prev) => !prev);
   };
-  // switching through characters
+  
+  // switching through characters will be added
 
-  const [count, setCount] = useState(0);
-  const nextCharacter = () => {
-    setCount((prev) => prev + 1);
-  };
-  const lastCharacter = () => {
-    setCount((prev) => prev - 1);
-  };
   // h1 style
   const h1Style = { margin: "1em 0", textAlign: "center", fontSize: "2em", color:"rgb(48, 88, 112)" };
   //  profile
@@ -95,8 +89,8 @@ const Profile = ({ character, posts }) => {
           }}
         >
           {/*  buttons to navigate through characters */}
-          <button onClick={lastCharacter}>Last</button>
-          <button onClick={nextCharacter}>Next</button>
+//           <button onClick={lastCharacter}>Last</button>
+//           <button onClick={nextCharacter}>Next</button>
         </div>
       </div>
     </section>

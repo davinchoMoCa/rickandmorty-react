@@ -15,6 +15,7 @@
 1. A form in the header to filter through the current *20* characters on the page
  
 ![Screen Shot 2022-05-21 at 9 56 55 AM](https://user-images.githubusercontent.com/92553207/169703318-f3ea6e1e-c9d3-4cb0-964b-2e3440809c13.png)
+
 2. The logo links back to the Home Page
  
 ![Screen Shot 2022-05-21 at 9 57 12 AM](https://user-images.githubusercontent.com/92553207/169703486-48b6224d-742f-4645-b2bf-d754cfac9f2f.png)

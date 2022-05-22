@@ -14,6 +14,6 @@
 ##Profile Page
 
 1. The Header has a back button 
-2. Ech characters name is displayed above the character card
-3. Character card display character information
-4. The Shwo More button displays even more details about the characters.
+2. Each character's name is displayed above the character card
+3. Character card displays character information
+4. The Show More button displays even more details about the characters.

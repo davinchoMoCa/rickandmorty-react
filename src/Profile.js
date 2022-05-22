@@ -30,7 +30,7 @@ const Profile = ({ character, posts }) => {
     marginTop: ".5em",
   };
   return (
-    <section>
+    <section className="Profile">
       <h1 style={h1Style}> Character : {character.name}</h1>
 
       <div className="card-profile">

@@ -31,7 +31,7 @@ const Profile = ({ character, posts }) => {
   };
   return (
     <section className="Profile">
-      <h1 style={h1Style}> Character : {character.name}</h1>
+      <h2 style={h1Style}> Character : {character.name}</h2>
 
       <div className="card-profile">
         <div className="profile-card">

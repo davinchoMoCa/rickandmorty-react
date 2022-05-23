@@ -79,7 +79,7 @@ const Profile = ({ character, posts }) => {
                 <li>
                   {" "}
                   Seen in at least {character.episode.length}{" "}
-                  {character.episode.length > 2 ? "episodes" : "episode"}{" "}
+                  {character.episode.length > 1 ? "episodes" : "episode"}{" "}
                 </li>
                 <li>
                   {character.name} is <span> {character.status}</span>

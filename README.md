@@ -45,7 +45,7 @@
 ![Screen Shot 2022-05-21 at 10 05 10 AM](https://user-images.githubusercontent.com/92553207/169703439-dda6a6c4-2bf1-4584-b4c5-b40d3f7ea57b.png)
 
 4. A *hide* button to hide the extra details
-> The *next* and *last* buttons to switch character profiles
+> The *next* and *last* buttons to switch character profiles. It works but needs a conditional to take you back when the character profile id doesn't exist
 
 ![Screen Shot 2022-05-21 at 10 05 21 AM](https://user-images.githubusercontent.com/92553207/169703373-0a3d9f72-77cb-4ed1-8c14-36621fed898c.png)
 
